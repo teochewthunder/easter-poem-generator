@@ -56,7 +56,7 @@ export default function Home() {
       </label>
       <label>
         <Image className={styles.symbolImage} src="/symbol_chicks.jpg" alt="Chicks" width={100} height={100} />
-        <input type="checkbox" name="symbol_chicks" value="bunny" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
+        <input type="checkbox" name="symbol_chicks" value="chicks" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
         &nbsp;Chicks
         &nbsp;<a href="/symbols/chicks" target="_blank">Note</a>
         <br />
