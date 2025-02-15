@@ -34,7 +34,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/contact', {
+    const response = await fetch('/poem', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
