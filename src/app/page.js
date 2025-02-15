@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -46,8 +48,20 @@ export default function Home() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Bunny:
-        <input type="checkbox" name="symbol_bunny" value="bunny" onClick={handleChecking} />
+        <Image
+          className={styles.symbolImage}
+          src="/symbol_bunny.jpg"
+          alt="Bunny"
+          width={100}
+          height={100}
+        />
+        <input 
+          type="checkbox" 
+          name="symbol_bunny" 
+          value="bunny" 
+          onChange={handleChecking} 
+          checked={ (formData.symbol_bunny == "bunny") } 
+        />
       </label>
       <button type="submit">Submit</button>
     </form>
