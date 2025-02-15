@@ -62,6 +62,8 @@ export default function Home() {
           onChange={handleChecking} 
           checked={ (formData.symbol_bunny == "bunny") } 
         />
+        &nbsp;Bunny
+        &nbsp;<a href="/symbols/bunny" target="_blank">Note</a>
       </label>
       <button type="submit">Submit</button>
     </form>
