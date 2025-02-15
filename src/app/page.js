@@ -48,23 +48,40 @@ export default function Home() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <Image
-          className={styles.symbolImage}
-          src="/symbol_bunny.jpg"
-          alt="Bunny"
-          width={100}
-          height={100}
-        />
-        <input 
-          type="checkbox" 
-          name="symbol_bunny" 
-          value="bunny" 
-          onChange={handleChecking} 
-          checked={ (formData.symbol_bunny == "bunny") } 
-        />
+        <Image className={styles.symbolImage} src="/symbol_bunny.jpg" alt="Bunny" width={100} height={100} />
+        <input type="checkbox" name="symbol_bunny" value="bunny" onChange={handleChecking} checked={ (formData.symbol_bunny === "bunny") } />
         &nbsp;Bunny
         &nbsp;<a href="/symbols/bunny" target="_blank">Note</a>
+        <br />
       </label>
+      <label>
+        <Image className={styles.symbolImage} src="/symbol_chicks.jpg" alt="Chicks" width={100} height={100} />
+        <input type="checkbox" name="symbol_chicks" value="bunny" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
+        &nbsp;Chicks
+        &nbsp;<a href="/symbols/chicks" target="_blank">Note</a>
+        <br />
+      </label>
+      <label>
+        <Image className={styles.symbolImage} src="/symbol_cross.jpg" alt="Cross" width={100} height={100} />
+        <input type="checkbox" name="symbol_cross" value="cross" onChange={handleChecking} checked={ (formData.symbol_cross === "cross") } />
+        &nbsp;Cross
+        &nbsp;<a href="/symbols/cross" target="_blank">Note</a>
+        <br />
+      </label>
+      <label>
+        <Image className={styles.symbolImage} src="/symbol_eggs.jpg" alt="Eggs" width={100} height={100} />
+        <input type="checkbox" name="symbol_eggs" value="eggs" onChange={handleChecking} checked={ (formData.symbol_eggs === "eggs") } />
+        &nbsp;Eggs
+        &nbsp;<a href="/symbols/eggs" target="_blank">Note</a>
+        <br />
+      </label>
+      <label>
+        <Image className={styles.symbolImage} src="/symbol_lillies.jpg" alt="Lillies" width={100} height={100} />
+        <input type="checkbox" name="symbol_lillies" value="lillies" onChange={handleChecking} checked={ (formData.symbol_lillies === "lillies") } />
+        &nbsp;Lillies
+        &nbsp;<a href="/symbols/lillies" target="_blank">Note</a>
+        <br />
+      </label>      
       <button type="submit">Submit</button>
     </form>
   );
