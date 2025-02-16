@@ -6,8 +6,8 @@ export default function SymbolBunny() {
     <div>
         <Image
           className={styles.symbolImage}
-          src="/symbol_bunny.jpg"
-          alt="Bunny"
+          src="/symbol_eggs.jpg"
+          alt="Eggs"
           width={300}
           height={300}
           align="left"
