@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
 import Image from "next/image";
 import styles from "./page.module.css";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -34,10 +34,10 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/poem', {
-      method: 'POST',
+    const response = await fetch("/api/poemgen", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(formData)
     });
