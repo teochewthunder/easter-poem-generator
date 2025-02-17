@@ -14,6 +14,10 @@ export default function Home() {
     symbol_lillies: ""
   });
 
+  const [generation, setGeneration] = useState({
+    poem: ""
+  });
+
   const handleChecking = (e) => {
     const { name, value, checked } = e.target;
     var finalValue = (checked ? value : "");
@@ -42,42 +46,50 @@ export default function Home() {
       body: JSON.stringify(formData)
     });
     const result = await response.json();
-    console.log(result);
+
+    if (response.status === 200) {
+      setGeneration( { poem: result.message } );
+    } else {
+      alert(result.message);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <input type="checkbox" name="symbol_bunny" value="bunny" onChange={handleChecking} checked={ (formData.symbol_bunny === "bunny") } />
-        &nbsp;Bunny
-        &nbsp;<a href="/symbols/bunny" target="_blank">👁</a>
-        <br />
-      </label>
-      <label>
-        <input type="checkbox" name="symbol_chicks" value="chicks" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
-        &nbsp;Chicks
-        &nbsp;<a href="/symbols/chicks" target="_blank">👁</a>
-        <br />
-      </label>
-      <label>
-        <input type="checkbox" name="symbol_cross" value="cross" onChange={handleChecking} checked={ (formData.symbol_cross === "cross") } />
-        &nbsp;Cross
-        &nbsp;<a href="/symbols/cross" target="_blank">👁</a>
-        <br />
-      </label>
-      <label>
-        <input type="checkbox" name="symbol_eggs" value="eggs" onChange={handleChecking} checked={ (formData.symbol_eggs === "eggs") } />
-        &nbsp;Eggs
-        &nbsp;<a href="/symbols/eggs" target="_blank">👁</a>
-        <br />
-      </label>
-      <label>
-        <input type="checkbox" name="symbol_lillies" value="lillies" onChange={handleChecking} checked={ (formData.symbol_lillies === "lillies") } />
-        &nbsp;Lillies
-        &nbsp;<a href="/symbols/lillies" target="_blank">👁</a>
-        <br />
-      </label>      
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input type="checkbox" name="symbol_bunny" value="bunny" onChange={handleChecking} checked={ (formData.symbol_bunny === "bunny") } />
+          &nbsp;Bunny
+          &nbsp;<a href="/symbols/bunny" target="_blank">👁</a>
+          <br />
+        </label>
+        <label>
+          <input type="checkbox" name="symbol_chicks" value="chicks" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
+          &nbsp;Chicks
+          &nbsp;<a href="/symbols/chicks" target="_blank">👁</a>
+          <br />
+        </label>
+        <label>
+          <input type="checkbox" name="symbol_cross" value="cross" onChange={handleChecking} checked={ (formData.symbol_cross === "cross") } />
+          &nbsp;Cross
+          &nbsp;<a href="/symbols/cross" target="_blank">👁</a>
+          <br />
+        </label>
+        <label>
+          <input type="checkbox" name="symbol_eggs" value="eggs" onChange={handleChecking} checked={ (formData.symbol_eggs === "eggs") } />
+          &nbsp;Eggs
+          &nbsp;<a href="/symbols/eggs" target="_blank">👁</a>
+          <br />
+        </label>
+        <label>
+          <input type="checkbox" name="symbol_lillies" value="lillies" onChange={handleChecking} checked={ (formData.symbol_lillies === "lillies") } />
+          &nbsp;Lillies
+          &nbsp;<a href="/symbols/lillies" target="_blank">👁</a>
+          <br />
+        </label>      
+        <button type="submit">Submit</button>
+      </form>
+      <p dangerouslySetInnerHTML={{ __html: generation.poem }} />
+    </div>
   );
 }
