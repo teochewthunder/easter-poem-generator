@@ -38,6 +38,8 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setGeneration( { poem: "Pease wait..." } );
+    
     const response = await fetch("/api/poemgen", {
       method: "POST",
       headers: {

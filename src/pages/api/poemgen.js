@@ -38,7 +38,7 @@ export default function handler(req, res) {
     .then(data => { 
       var json_data = JSON.parse(data);
       console.log(json_data.choices);
-      var html_content =  json_data.choices[0].message.content.replaceAll("\n\n", "<br /><br />");
+      var html_content =  json_data.choices[0].message.content.replaceAll("\n", "<br />");
       return res.status(200).json({ message: html_content });
     })
     .catch(err => {
