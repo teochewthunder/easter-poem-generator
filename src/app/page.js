@@ -38,8 +38,8 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setGeneration( { poem: "Pease wait..." } );
-    
+    setGeneration( { poem: "<h2>Pease wait...</h2>" } );
+
     const response = await fetch("/api/poemgen", {
       method: "POST",
       headers: {
@@ -57,8 +57,9 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className={styles.generationContainer} >
       <form onSubmit={handleSubmit}>
+        <h1>Generate a Poem!</h1>
         <label>
           <input type="checkbox" name="symbol_bunny" value="bunny" onChange={handleChecking} checked={ (formData.symbol_bunny === "bunny") } />
           &nbsp;Bunny
@@ -89,9 +90,9 @@ export default function Home() {
           &nbsp;<a href="/symbols/lillies" target="_blank">👁</a>
           <br />
         </label>      
-        <button type="submit">Submit</button>
+        <button type="submit">Go!</button>
       </form>
-      <p dangerouslySetInnerHTML={{ __html: generation.poem }} />
+      <div className={styles.poemContainer} dangerouslySetInnerHTML={{ __html: generation.poem }} />
     </div>
   );
 }

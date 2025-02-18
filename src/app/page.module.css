@@ -11,3 +11,23 @@
 .symbolText {
   padding: 10px;
 }
+
+.generationContainer {
+  width: 500px;
+  margin: 0 auto 0 auto;
+}
+
+.generationContainer form {
+  width: 450px;
+  padding: 10px;
+  margin: 0 auto 0 auto;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 100, 100);
+}
+
+.poemContainer {
+  width: 450px;
+  padding: 10px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
