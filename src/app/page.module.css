@@ -31,3 +31,16 @@
   margin: 0 auto 0 auto;
   text-align: center;
 }
+
+.label {
+  disply: inline-block;
+  width: 45%;
+  float: left;
+}
+
+.button {
+  disply: inline-block;
+  width: 5em;
+  height: 2em;
+  float: right;
+}
