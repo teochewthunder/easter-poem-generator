@@ -61,36 +61,15 @@ export default function Home() {
       <form onSubmit={handleSubmit}>
         <h1>Generate an Easter Poem!</h1>
         <b>Include at least one of these elements</b>
-        <label className={styles.label}>
-          <input type="checkbox" name="symbol_bunny" value="bunny" onChange={handleChecking} checked={ (formData.symbol_bunny === "bunny") } />
-          &nbsp;Bunny
-          &nbsp;<a href="/symbols/bunny" target="_blank">👁</a>
-          <br />
-        </label>
-        <label className={styles.label}>
-          <input type="checkbox" name="symbol_chicks" value="chicks" onChange={handleChecking} checked={ (formData.symbol_chicks === "chicks") } />
-          &nbsp;Chicks
-          &nbsp;<a href="/symbols/chicks" target="_blank">👁</a>
-          <br />
-        </label>
-        <label className={styles.label}>
-          <input type="checkbox" name="symbol_cross" value="cross" onChange={handleChecking} checked={ (formData.symbol_cross === "cross") } />
-          &nbsp;Cross
-          &nbsp;<a href="/symbols/cross" target="_blank">👁</a>
-          <br />
-        </label>
-        <label className={styles.label}>
-          <input type="checkbox" name="symbol_eggs" value="eggs" onChange={handleChecking} checked={ (formData.symbol_eggs === "eggs") } />
-          &nbsp;Eggs
-          &nbsp;<a href="/symbols/eggs" target="_blank">👁</a>
-          <br />
-        </label>
-        <label className={styles.label}>
-          <input type="checkbox" name="symbol_lillies" value="lillies" onChange={handleChecking} checked={ (formData.symbol_lillies === "lillies") } />
-          &nbsp;Lillies
-          &nbsp;<a href="/symbols/lillies" target="_blank">👁</a>
-          <br />
-        </label>      
+        {
+          Object.entries(formData).map(([key, value]) => (
+          <label className={styles.label} key={key}>
+            <input type="checkbox" name={key} value={key.replace("symbol_", "")} onChange={handleChecking} checked={ (formData[key] === key.replace("symbol_", "")) } />
+            &nbsp;{key.replace("symbol_", "")}
+            &nbsp;<a href={ ("/" +key.replace("_", "/")) } target="_blank">👁</a>
+            <br />
+          </label>
+        ))}    
         <button type="submit" className={styles.button}>Go!</button>
         <br style={{ clear:"both" }} />
       </form>
