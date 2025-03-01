@@ -1,11 +1,12 @@
 .symbolImage {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  min-height: auto;
   margin: 10px auto 10px auto;
+  text-align: center;
+}
+
+.symbolImage img{
   border-radius: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 .symbolText {
