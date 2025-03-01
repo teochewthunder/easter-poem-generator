@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 import { useState } from "react";
@@ -66,7 +67,7 @@ export default function Home() {
           <label className={styles.label} key={key}>
             <input type="checkbox" name={key} value={key.replace("symbol_", "")} onChange={handleChecking} checked={ (formData[key] === key.replace("symbol_", "")) } />
             &nbsp;{key.replace("symbol_", "")}
-            &nbsp;<a href={ ("/" +key.replace("_", "/")) } target="_blank">👁</a>
+            &nbsp;<Link href={ ("/" +key.replace("_", "/")) } target="_blank">&#9658;</Link>
             <br />
           </label>
         ))}    
