@@ -12,8 +12,8 @@ export default function SymbolPage({ params }) {
 
   return (
     <div className={ styles.symbolImage } >
-        <Image src={ "/symbol_" + params.id + ".jpg" } alt={ params.id } width={ 300 } height={ 300 } />
-        <p className={styles.symbolText} >{ texts[params.id] }</p>
+        <Image src={ "/symbol_" + params.symbolName + ".jpg" } alt={ params.symbolName } width={ 300 } height={ 300 } />
+        <p className={styles.symbolText} >{ texts[params.symbolName] }</p>
     </div>
   );
 }
