@@ -1,7 +1,5 @@
 export default function handler(req, res) {
   if (req.method === "POST") {
-
-    // Perform your form handling logic here (e.g., save data to database)
     var symbols = "";
     if (req.body.symbol_bunny !== "") symbols += (req.body.symbol_bunny + ", ");
     if (req.body.symbol_chicks !== "") symbols += (req.body.symbol_chicks + ", ");
@@ -27,7 +25,7 @@ export default function handler(req, res) {
       "model": "gpt-3.5-turbo",
       "messages" : messages,
       "max_tokens" : 2000
-    }
+    };
 
     fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
