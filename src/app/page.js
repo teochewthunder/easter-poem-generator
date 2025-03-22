@@ -53,7 +53,7 @@ export default function Home() {
     if (response.status === 200) {
       setGeneration( { poem: result.message } );
     } else {
-      alert(result.message);
+      console.log(result);
     }
   };
 
