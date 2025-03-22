@@ -11,6 +11,6 @@ This NextJS app gets input from user and uses that input in an API call to `Chat
 - There is an `Image` component. `[symbolName]` determines the `src` attribute.
 - There is a paragaph tag containing text taken from the `texts` object. `[symbolName]` determines the text.
 
-`pages/api/poemgen.js`
+`app/api/poemgen/route.js`
 - sends data to a `ChatGPT` endpoint.
 - returns the data back to `app/page.js`.
