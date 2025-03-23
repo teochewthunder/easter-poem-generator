@@ -34,13 +34,13 @@
 }
 
 .label {
-  disply: inline-block;
+  display: inline-block;
   width: 45%;
   float: left;
 }
 
 .button {
-  disply: inline-block;
+  display: inline-block;
   width: 5em;
   height: 2em;
   float: right;
