@@ -18,7 +18,7 @@ export async function POST(req) {
 	var messages = [];
 	var obj = {
 	  "role": "user",
-	  "content" : "Generate n Easter-themed poem with the following element(s): " + symbols + "."
+	  "content" : "Generate an Easter-themed poem with the following element(s): " + symbols + "."
 	};
 	messages.push(obj);
 
